@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListLayoutInfo
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -32,6 +33,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -50,29 +52,47 @@ class MainActivity : AppCompatActivity() {
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
 
-
         val img = painterResource(id = R.drawable.pic_dog_1)
 
-        Card(elevation = 4.dp, modifier = Modifier.padding(16.dp)) {
+        Column {
+
+            val list = listOf("May", "Baron", "Grace", "Amy", "Tina", "Dean", "Sweety")
+
+            LazyColumn {
+                items(list) { item ->
+                    ItemLayout(item)
+                }
+            }
+
+        }
+    }
+}
+
+@Composable
+fun ItemLayout(item: String) {
+    Card(modifier = Modifier.padding(10.dp),elevation = 4.dp) {
+        Row {
+            Surface(
+                modifier = Modifier.size(50.dp),
+                shape = CircleShape,
+                color = MaterialTheme.colors.onSurface.copy(alpha = 0.2f)
+            ) {
+
+            }
+
             Column {
 
-                val list = listOf("a", "b", "c", "d")
 
-                LazyColumn {
-                    items(list) { item->
-                        Image(
-                            painter = img,
-                            contentDescription = "",
-                            modifier = Modifier
-                                .width(50.dp)
-                                .height(50.dp)
-                                .clip(shape = RoundedCornerShape(4.dp)),
-                            contentScale = ContentScale.Crop
-                        )
-                        Text(text = item)
-                    }
-                }
-
+//        Image(
+//            painter = img,
+//            contentDescription = "",
+//            modifier = Modifier
+//                .width(50.dp)
+//                .height(50.dp)
+//                .clip(shape = RoundedCornerShape(4.dp)),
+//            contentScale = ContentScale.Crop
+//        )
+                Text(text = item,modifier = Modifier.padding(10.dp))
             }
         }
     }
