@@ -18,11 +18,20 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListLayoutInfo
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +49,32 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+
+
+        val img = painterResource(id = R.drawable.pic_dog_1)
+
+        Card(elevation = 4.dp, modifier = Modifier.padding(16.dp)) {
+            Column {
+
+                val list = listOf("a", "b", "c", "d")
+
+                LazyColumn {
+                    items(list) { item->
+                        Image(
+                            painter = img,
+                            contentDescription = "",
+                            modifier = Modifier
+                                .width(50.dp)
+                                .height(50.dp)
+                                .clip(shape = RoundedCornerShape(4.dp)),
+                            contentScale = ContentScale.Crop
+                        )
+                        Text(text = item)
+                    }
+                }
+
+            }
+        }
     }
 }
 
