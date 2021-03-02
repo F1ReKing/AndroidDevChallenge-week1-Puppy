@@ -37,6 +37,7 @@ import com.f1reking.androiddevchallenge.dogadoption.data.dogDataList
 import com.f1reking.androiddevchallenge.dogadoption.navigation.Navigation
 import com.f1reking.androiddevchallenge.dogadoption.ui.theme.black
 import com.f1reking.androiddevchallenge.dogadoption.ui.theme.greyBg
+import com.f1reking.androiddevchallenge.dogadoption.ui.theme.textSubTitle
 import com.f1reking.androiddevchallenge.dogadoption.ui.theme.textTitle
 import dev.chrisbanes.accompanist.coil.CoilImage
 
@@ -116,7 +117,7 @@ fun ItemLayout(dog: Dog, navController: NavController) {
 
                 Text(
                     text = dog.age,
-                    color = textTitle,
+                    color = textSubTitle,
                     fontSize = 14.sp,
                     modifier = Modifier.padding(10.dp, 5.dp)
                 )

@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTheme(darkTheme = false) {
+            MyTheme {
                 ProvideWindowInsets {
                     MyApp()
                 }
@@ -59,7 +59,6 @@ fun NavGraph() {
         composable(route = Navigation.NAV_LIST_SCREEN) {
             ListScreen(navController = navController)
         }
-
         composable(route = Navigation.NAV_DETAILS_SCREEN,
             arguments = listOf(
                 navArgument(Navigation.NAV_ID) {

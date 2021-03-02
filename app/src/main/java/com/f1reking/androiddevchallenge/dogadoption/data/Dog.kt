@@ -6,8 +6,5 @@ data class Dog(
     var age: String,
     var gender: Int, //0:Male 1:Female
     var imgUrl: String,
-    var address: String,
-    var ownerName: String,
-    var datePosted: String,
     var description: String
 )

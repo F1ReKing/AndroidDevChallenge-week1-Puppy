@@ -1,32 +1,32 @@
 package com.f1reking.androiddevchallenge.dogadoption.components
 
+import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.f1reking.androiddevchallenge.dogadoption.R
 import com.f1reking.androiddevchallenge.dogadoption.data.Dog
 import com.f1reking.androiddevchallenge.dogadoption.data.dogDataList
-import com.f1reking.androiddevchallenge.dogadoption.ui.theme.black
-import com.f1reking.androiddevchallenge.dogadoption.ui.theme.textTitle
+import com.f1reking.androiddevchallenge.dogadoption.ui.theme.*
 import dev.chrisbanes.accompanist.coil.CoilImage
 import dev.chrisbanes.accompanist.insets.statusBarsPadding
 
@@ -78,20 +78,60 @@ private fun DogDetailHeader(dog: Dog, navController: NavController) {
 
 @Composable
 private fun DogInfo(dog: Dog) {
+    val context = LocalContext.current
     Column {
 
-        Text(
-            text = dog.name,
-            color = black,
-            fontSize = 18.sp,
-            modifier = Modifier.padding(10.dp)
-        )
+        Row {
+
+            Column {
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = dog.name,
+                        color = black,
+                        fontSize = 18.sp,
+                        modifier = Modifier.padding(10.dp)
+                    )
+
+                    val resId = if (dog.gender == 0) R.drawable.ic_male else R.drawable.ic_female
+
+                    Image(
+                        imageVector = ImageVector.vectorResource(id = resId),
+                        contentDescription = "",
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+
+                Text(
+                    text = dog.age,
+                    color = textSubTitle,
+                    fontSize = 14.sp,
+                    modifier = Modifier.padding(10.dp, 0.dp, 0.dp, 0.dp)
+                )
+            }
+
+            Button(
+                onClick = {
+                    Toast.makeText(context, "${dog.name} is yours now!", Toast.LENGTH_SHORT).show()
+                }, colors = ButtonDefaults.buttonColors(
+                    backgroundColor = purple500,
+                    contentColor = Color.White
+                ),
+                shape = RoundedCornerShape(16.dp),
+                modifier = Modifier.fillMaxWidth().padding(10.dp,10.dp)
+
+            ) {
+                Text(text = "Adopt", style = MaterialTheme.typography.button)
+            }
+        }
+
+
 
         Text(
-            text = dog.age,
-            color = textTitle,
+            text = dog.description,
+            color = textDesc,
             fontSize = 14.sp,
-            modifier = Modifier.padding(10.dp, 0.dp, 0.dp, 0.dp)
+            modifier = Modifier.padding(10.dp, 20.dp)
         )
     }
 }
@@ -99,5 +139,5 @@ private fun DogInfo(dog: Dog) {
 @Preview
 @Composable
 private fun DetailsPreview() {
-    DetailsScreen(rememberNavController(),1)
+    DetailsScreen(rememberNavController(), 1)
 }
