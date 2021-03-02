@@ -3,7 +3,13 @@ package com.f1reking.androiddevchallenge.dogadoption.components
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -26,7 +32,10 @@ import androidx.navigation.compose.rememberNavController
 import com.f1reking.androiddevchallenge.dogadoption.R
 import com.f1reking.androiddevchallenge.dogadoption.data.Dog
 import com.f1reking.androiddevchallenge.dogadoption.data.dogDataList
-import com.f1reking.androiddevchallenge.dogadoption.ui.theme.*
+import com.f1reking.androiddevchallenge.dogadoption.ui.theme.black
+import com.f1reking.androiddevchallenge.dogadoption.ui.theme.purple500
+import com.f1reking.androiddevchallenge.dogadoption.ui.theme.textDesc
+import com.f1reking.androiddevchallenge.dogadoption.ui.theme.textSubTitle
 import dev.chrisbanes.accompanist.coil.CoilImage
 import dev.chrisbanes.accompanist.insets.statusBarsPadding
 
