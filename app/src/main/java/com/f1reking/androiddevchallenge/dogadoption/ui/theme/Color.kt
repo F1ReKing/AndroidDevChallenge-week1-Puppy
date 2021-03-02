@@ -13,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.f1reking.androiddevchallenge.dogadoption.ui.theme
 
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Shapes
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
 
-val shapes = Shapes(
-    small = RoundedCornerShape(4.dp),
-    medium = RoundedCornerShape(4.dp),
-    large = RoundedCornerShape(0.dp)
-)
+val purple200 = Color(0xFF03A9F4)
+val purple500 = Color(0xFF6200EE)
+val purple700 = Color(0xFF001EB3)
+val teal200 = Color(0xFF03DAC5)
+val white = Color(0xFFFFFFFF)
+val black = Color(0xFF111111)
+val greyBg = Color(0x11090909)
+val textTitle = Color(0xFF3D3D3E)
