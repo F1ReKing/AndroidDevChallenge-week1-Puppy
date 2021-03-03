@@ -17,7 +17,7 @@ package com.example.androiddevchallenge
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.f1reking.androiddevchallenge.MainActivity
+import com.f1reking.androiddevchallenge.dogadoption.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
