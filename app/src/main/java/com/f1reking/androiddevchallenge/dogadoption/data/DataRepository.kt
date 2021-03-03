@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.f1reking.androiddevchallenge.dogadoption.data
 
 val dogDataList: MutableList<Dog> = mutableListOf(
@@ -36,7 +51,6 @@ val dogDataList: MutableList<Dog> = mutableListOf(
         imgUrl = "https://images.unsplash.com/photo-1610818744646-d874cdb76283?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=celyn-bowen-upiF1tF8ZWU-unsplash.jpg",
         description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin ac orci phasellus egestas. Id faucibus nisl tincidunt eget nullam non nisi. Duis tristique sollicitudin nibh sit amet. Amet nisl purus in mollis nunc sed id semper. Ac ut consequat semper viverra nam. Venenatis cras sed felis eget velit aliquet sagittis. Augue lacus viverra vitae congue eu. Congue eu consequat ac felis donec et odio pellentesque diam. Mauris pharetra et ultrices neque ornare aenean euismod elementum."
     ),
-
 
     Dog(
         id = 4,
@@ -83,7 +97,6 @@ val dogDataList: MutableList<Dog> = mutableListOf(
         description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin ac orci phasellus egestas. Id faucibus nisl tincidunt eget nullam non nisi. Duis tristique sollicitudin nibh sit amet. Amet nisl purus in mollis nunc sed id semper. Ac ut consequat semper viverra nam. Venenatis cras sed felis eget velit aliquet sagittis. Augue lacus viverra vitae congue eu. Congue eu consequat ac felis donec et odio pellentesque diam. Mauris pharetra et ultrices neque ornare aenean euismod elementum."
     ),
 
-
     Dog(
         id = 9,
         name = "Padme",
@@ -92,7 +105,6 @@ val dogDataList: MutableList<Dog> = mutableListOf(
         imgUrl = "https://images.unsplash.com/photo-1530041539828-114de669390e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=charles-deluvio-lJJlaUWYrPE-unsplash.jpg",
         description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin ac orci phasellus egestas. Id faucibus nisl tincidunt eget nullam non nisi. Duis tristique sollicitudin nibh sit amet. Amet nisl purus in mollis nunc sed id semper. Ac ut consequat semper viverra nam. Venenatis cras sed felis eget velit aliquet sagittis. Augue lacus viverra vitae congue eu. Congue eu consequat ac felis donec et odio pellentesque diam. Mauris pharetra et ultrices neque ornare aenean euismod elementum."
     ),
-
 
     Dog(
         id = 10,

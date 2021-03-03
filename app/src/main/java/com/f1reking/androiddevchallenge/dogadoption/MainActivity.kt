@@ -59,7 +59,8 @@ fun NavGraph() {
         composable(route = Navigation.NAV_LIST_SCREEN) {
             ListScreen(navController = navController)
         }
-        composable(route = Navigation.NAV_DETAILS_SCREEN,
+        composable(
+            route = Navigation.NAV_DETAILS_SCREEN,
             arguments = listOf(
                 navArgument(Navigation.NAV_ID) {
                     type = NavType.IntType

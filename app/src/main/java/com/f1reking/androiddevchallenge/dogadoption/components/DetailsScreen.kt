@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.f1reking.androiddevchallenge.dogadoption.components
 
 import android.widget.Toast
@@ -55,7 +70,6 @@ fun DetailsScreen(navController: NavController, id: Int) {
                 DogDetailHeader(dog, navController)
                 DogInfo(dog)
             }
-
         } else {
             Text(text = "not found.")
         }
@@ -72,7 +86,6 @@ private fun DogDetailHeader(dog: Dog, navController: NavController) {
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.height(400.dp)
         ) {
-
         }
 
         Box(modifier = Modifier.statusBarsPadding()) {
@@ -127,19 +140,18 @@ private fun DogInfo(dog: Dog) {
             Button(
                 onClick = {
                     Toast.makeText(context, "${dog.name} is yours now!", Toast.LENGTH_SHORT).show()
-                }, colors = ButtonDefaults.buttonColors(
+                },
+                colors = ButtonDefaults.buttonColors(
                     backgroundColor = purple500,
                     contentColor = Color.White
                 ),
                 shape = RoundedCornerShape(16.dp),
-                modifier = Modifier.fillMaxWidth().padding(10.dp,10.dp)
+                modifier = Modifier.fillMaxWidth().padding(10.dp, 10.dp)
 
             ) {
                 Text(text = "Adopt", style = MaterialTheme.typography.button)
             }
         }
-
-
 
         Text(
             text = dog.description,
